@@ -18,7 +18,7 @@
     </label>
     <button class="btn btn-orange" (click)="SubmitNumber()" type="submit">Submit</button>
   </form>
-  <div>
+  <div *ngIf="createdCode">
     {{createdCode.MembershipNumber}}
   </div>
 </ion-content>
