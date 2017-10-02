@@ -87,8 +87,9 @@ export class UserScannerPage {
 
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
-      this.createdCode = barcodeData
-      
+      // this.createdCode = barcodeData
+      this.createdCode = JSON.parse(barcodeData)
+
     });
   }
 }
