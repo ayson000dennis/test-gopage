@@ -1,66 +1,61 @@
 import { Component } from '@angular/core';
-import { Platform, NavController } from 'ionic-angular';
-
-import { LoginPage } from '../page-login/page-login';
-import { MenuPage } from '../page-menu/page-menu';
+import { NavController, NavParams } from 'ionic-angular';
 import { ApiService } from '../../service/api.service.component';
+import { Storage } from '@ionic/storage';
+
+import { UserScannerPage } from '../page-user-scanner/page-user-scanner';
 
 import * as $ from "jquery";
+import  moment  from 'moment';
 
 @Component({
-  selector: 'page-user-find-deals',
-  templateUrl: 'page-user-find-deals.html'
+  selector: 'page-user-deals',
+  templateUrl: 'page-user-deals.html'
 })
 
-export class UserFindDealsPage {
-  pages: Array<{title: string, component: any}>;
-  deals : string[]
-  hasData :boolean = false
+export class UserDealsPage {
+  user: string[];
+  business_id: any;
+  hasData: boolean = false;
+  dealsList: any;
+
   constructor(
     public navCtrl: NavController,
-    public platform: Platform,
-    private api : ApiService){
+    public navParams: NavParams,
+    private api:ApiService,
+    private storage: Storage){
+
+      this.business_id = navParams.get('business_id');
   }
-  ionViewWillEnter(){
-    this.api.Deals.deals_list().then(deals =>{
-      this.deals = deals
-      this.hasData = true
-      console.log(this.deals)
-    })
-  }
-  goHome() {
-    this.navCtrl.setRoot(LoginPage, {}, {
+
+  goScanner() {
+    this.navCtrl.setRoot(UserScannerPage, {}, {
       animate: true,
       direction: 'back'
     });
   }
 
-  showMenu() {
-    this.navCtrl.push(MenuPage, {
-      animate: true,
-      direction: 'forward'
-    });
+  ionViewWillEnter(){
+    this.api.Deals.deals_list(this.business_id).then(users => {
+      this.dealsList = users;
+      console.log(this.dealsList)
+      this.hasData = true;
+    })
   }
 
-  IonViewDidLoad() {
-    if ($('.owl-carousel').length == 0) return;
+  dateFormat(value) {
+    var dateNow = moment(value),
+      format = dateNow.format('MMM/D/YYYY'),
+      newDateNow = new Date(value),
+      getYear = newDateNow.getFullYear();
 
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-      margin: 10,
-      nav: true,
-      loop: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 5
-        }
-      }
-    });
+    format = format.replace("amt", "at");
+    format = format.replace("pmt", "at");
+
+    if (getYear == 1970) {
+      return '-'
+    } else {
+      return format;
+    }
   }
 }

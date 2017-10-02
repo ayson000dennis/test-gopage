@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { LoginPage } from '../page-login/page-login';
-import { UserMembershipCardPage } from '../page-user-membership-card/page-user-membership-card';
-import { UserLoyaltyCardsPage } from '../page-user-loyalty-cards/page-user-loyalty-cards';
-import { UserFindDealsPage } from '../page-user-find-deals/page-user-find-deals';
-import { UserFavoritesPage } from '../page-user-favorites/page-user-favorites';
+import { UserScannerPage } from '../page-user-scanner/page-user-scanner';
+import { UserCustomersPage } from '../page-user-customers/page-user-customers';
 import { UserInboxPage } from '../page-user-inbox/page-user-inbox';
 
 import * as $ from "jquery";
@@ -24,10 +22,8 @@ export class MenuPage {
     public navCtrl: NavController) {
 
     this.pages = [
-      { title: 'membership card', component: UserMembershipCardPage },
-      { title: 'loyalty cards', component: UserLoyaltyCardsPage },
-      { title: 'find deals', component: UserFindDealsPage },
-      { title: 'favorites', component: UserFavoritesPage },
+      { title: 'scanner', component: UserScannerPage },
+      { title: 'customers', component: UserCustomersPage },
       { title: 'inbox', component: UserInboxPage }
     ];
   }
@@ -40,14 +36,14 @@ export class MenuPage {
   }
 
   openPage(page) {
-    this.navCtrl.setRoot(page.component, {
+    this.navCtrl.setRoot(page.component, {}, {
       animate: true,
-      direction: 'forward'
+      direction: 'back'
     });
   }
 
   logOut() {
-    this.navCtrl.push(LoginPage, {
+    this.navCtrl.push(LoginPage, {}, {
       animate: true,
       direction: 'back'
     });

@@ -1,15 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <img class="header-logo" src="assets/images/logo-min.png" alt="">
-    <div class="holder-menu" (click)="showMenu()">Menu</div>
-    <a class="inbox"><img src="assets/images/icon-mail.png" alt="" /><span class="count-msg">1</span></a>
+    <img class="header-logo" src="assets/images/logo.png" alt="">
+    <div class="profile">
+      <img class="profile-img" src="assets/images/img-profile.png" alt="">
+      <span class="fa fa-angle-down"></span>
+    </div>
+    <span class="inbox fa fa-envelope-o"><span class="count-msg">1</span></span>
   </ion-navbar>
+
+  <ion-list>
+    <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <span class="label-{{p.title}}">{{p.title}}</span>
+    </button>
+  </ion-list>
 </ion-header>
 
 <ion-content padding>
   <p class="title">
-    <!-- <img class="btn-nav to-right" src="assets/icon/icon-close.png" alt="" (click)="goBack()"> -->
     Favorites Page
   </p>
-
 </ion-content>

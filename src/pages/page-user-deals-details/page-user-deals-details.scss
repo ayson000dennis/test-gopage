@@ -1,0 +1,190 @@
+page-user-deals-details {
+  .scroll-content {
+    padding: 0 !important;
+
+    .btn-nav {
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+  }
+
+  .holder-store-details {
+    position: relative;
+    z-index: 0;
+
+    width: 100%;
+    height: 48vw;
+
+    background: url('../assets/images/bg-deals-details.jpg') no-repeat center;
+    background-size: cover;
+
+    p {
+      position: absolute;
+
+      margin: 0;
+
+      color: #313030;
+    }
+
+    .store-details-name {
+      bottom: 6vw;
+      left: 3vw;
+
+      font-size: 5vw;
+    }
+
+    .store-details-type {
+      bottom: 1.5vw;
+      left: 3vw;
+
+      font-size: 4.5vw;
+      line-height: 4.5vw;
+    }
+
+    .store-details-distance {
+      right: 3.5vw;
+      bottom: 3.5vw;
+
+      font-size: 3.5vw;
+
+      .fa {
+        margin-right: 1.5vw;
+
+        font-size: 4vw;
+      }
+    }
+  }
+
+  .holder-store-links {
+    padding: 3vw 0;
+    margin: 0;
+    list-style: none;
+
+    text-align: center;
+
+    border-bottom: 1px solid #c8c8c8;
+
+    &:before,
+    &:after {
+      content: '';
+
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    li {
+      float: left;
+      padding: 2vw 0;
+      width: 20%;
+
+      a {
+        display: block;
+
+        font-size: 3.5vw;
+        line-height: 1;
+        color: #474747;
+        text-decoration: none !important;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto 1vw;
+        width: 6.764vw;
+      }
+    }
+  }
+
+  .holder-store-info {
+    padding: 3.5vw 8vw 5.5vw;
+
+    color: #474747;
+
+    p {
+      position: relative;
+
+      margin: 0;
+    }
+
+    .store-description {
+      font-size: 3vw;
+      letter-spacing: .085vw;
+      line-height: 4.5vw;
+    }
+
+    .store-location,
+    .store-hours {
+      padding-left: 6.5vw;
+
+      font-size: 3.2vw;
+      line-height: 5vw;
+    }
+
+    .store-location {
+      margin-top: 6vw;
+
+      img {
+        width: 3.624vw;
+      }
+    }
+
+    .store-hours {
+      margin-top: 4vw;
+
+      img {
+        width: 4.834vw;
+      }
+
+      .fa {
+        margin-left: .5vw;
+        vertical-align: middle;
+
+        font-size: 6vw;
+        line-height: 0;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .holder-store-deals {
+    color: #474747;
+
+    .deals-title {
+      padding: 3.7vw 0 3.7vw;
+      margin: 0;
+
+      font-size: 4vw;
+      line-height: 1;
+      text-align: center;
+
+      background-color: #d7d7d7;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        padding: 5.2vw 3.5vw;
+
+        font-size: 3.5vw;
+        line-height: 1;
+
+        border-bottom: 1px solid #cdcdcd;
+
+        span {
+          float: right;
+        }
+      }
+    }
+  }
+}

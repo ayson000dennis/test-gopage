@@ -1,117 +1,40 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
-    <img class="header-logo" src="assets/images/logo-min.png" alt="">
-    <div class="holder-menu" (click)="showMenu()">Menu</div>
-    <a class="inbox"><img src="assets/images/icon-mail.png" alt="" /><span class="count-msg">1</span></a>
+    <img class="header-logo" src="assets/images/logo.png" alt="">
+    <div class="profile">
+      <img class="profile-img" src="assets/images/img-profile.png" alt="">
+      <span class="fa fa-angle-down"></span>
+    </div>
+    <span class="inbox fa fa-envelope-o"><span class="count-msg">1</span></span>
   </ion-navbar>
-</ion-header>
+
+  <ion-list>
+    <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <span class="label-{{p.title}}">{{p.title}}</span>
+    </button>
+  </ion-list>
+</ion-header> -->
 
 <ion-content padding>
+  <p class="title" (click)="goScanner()">
+    <img class="btn-nav" src="assets/icon/icon-back.png" alt="" />
+    Back to Scanner
+  </p>
 
-  <div class="container tier-one">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img src="assets/images/slider-img01.jpg" alt="Deals photo">
-          </div>
-          <div class="item">
-            <img src="assets/images/slider-img02.jpg" alt="Deals photo">
-          </div>
-          <div class="item">
-            <img src="assets/images/slider-img03.jpg" alt="Deals photo">
-          </div>
-        </div>
+  <div class="holder-list" *ngIf="hasData">
+    <div class="holder-deal" *ngFor="let deals of dealsList">
+      <div class="deal-info">
+        <p class="deal-title">
+          {{deals.template}}
+        </p>
+        <p class="deal-stamp">
+          1 stamp
+        </p>
+        <p class="deal-expire">
+          Expires {{dateFormat(deals.end_date)}}
+        </p>
       </div>
+      <button class="btn btn-green">Redeem</button>
     </div>
   </div>
-
-  <div class="container tier-two">
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Ice Cream and Treats at Cold Stone Creamery (Up to 40% Off)</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-5 push-md-7 sidebar">
-        <div class="media">
-          <img class="d-flex align-self-center mr-3" src="assets/images/deals-image01.jpg" alt="$6.50 for $10 worth of ice cream">
-          <div class="media-body align-self-center">
-            <a href="#"><h5 class="mt-0">$6.50 for $10 worth of ice cream</h5></a>
-          </div>
-        </div>
-        <div class="media">
-          <img class="d-flex align-self-center mr-3" src="assets/images/deals-image02.jpg" alt="18 for three vouchers, each good for $10 worth of ice cream">
-          <div class="media-body align-self-center">
-            <a href="#"><h5 class="mt-0">18 for three vouchers, each good for $10 worth of ice cream ($30 total value)</h5></a>
-          </div>
-        </div>
-        <div class="media">
-          <img class="d-flex align-self-center mr-3" src="assets/images/deals-image03.jpg" alt="$32 for one ice-cream 2/3 sheet cake">
-          <div class="media-body align-self-center">
-            <a href="#"><h5 class="mt-0">$32 for one ice-cream 2/3 sheet cake ($43.99 value)</h5></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-7 pull-md-5 left-area">
-        <h5>About Cold Stone Creamery</h5>
-        <p>Lorem ipsum dolor sit amet, no mea possim vocent. Id vis causae senserit, per an repudiare expetendis. Sea semper debitis apeirian ea. Ipsum fabellas laboramus mei at.
-        <br><br>
-        In percipit electram qui, prima erant appellantur ne his, ne sed forensibus temporibus. Habemus mnesarchum ne nam. Ne augue iriure accusamus eum, eos unum tota putant cu. Labore consetetur qui no. Te qui ludus facilis indoctum, an sed oratio ma.</p>
-        <br>
-        <h5>Deal Terms</h5>
-        <p>Lorem ipsum dolor sit amet, ius an veri exerci. Unum adipisci nam ut, eu nam dolores accusamus liberavisse. Minim antiopam ne cum, dicat quodsi consetetur per cu. Qui et posse definitionem, in pro tale perpetua sadipscing. Populo albucius vix ne, cum ex aperiri dolorum definitionem. Te facilisi intellegebat duo, pri an dolore labore.</p>
-
-        <ul class="social-links list-unstyled">
-          <li><i class="fa fa-map-marker fa-lg"></i>
-            <p>Cold Stone Creamery <br>West Hills 22820 Vanowen Street, <br>Los Angeles, CA 91307</p>
-          </li>
-          <li><i class="fa fa-clock-o fa-lg"></i>
-            <p>Open today 8:00AM - 12:30AM
-              <a class="toggle-collapse" data-toggle="collapse" href="#show-open-hours" aria-expanded="false" aria-controls="show-open-hours">(show more)</a>
-            </p>
-            <div class="collapse" id="show-open-hours">
-              <ul class="list-unstyled">
-                <li><strong>Monday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Tuesday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Wednesday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Thursday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Friday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Saturday</strong> 8:00AM - 12:30AM</li>
-                <li><strong>Sunday</strong> 8:00AM - 12:30AM</li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <i class="fa fa-phone fa-lg"></i>
-            <p>(212) 708-9400</p>
-          </li>
-          <li>
-            <i class="fa fa-globe fa-lg"></i>
-            <p>gopage.com</p>
-          </li>
-          <li>
-            <i class="fa fa-facebook fa-lg"></i>
-            <p>GoPageApp</p>
-          </li>
-          <li>
-            <i class="fa fa-twitter fa-lg"></i>
-            <p>@gopageapp</p>
-          </li>
-          <li>
-            <i class="fa fa-instagram fa-lg"></i>
-            <p>@gopageco</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-md-7">
-        <h5>Location</h5>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1301.4096210792902!2d-123.1095483788257!3d49.27982224000646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x77c545b8651d683a!2sT%26T+Supermarket!5e0!3m2!1sen!2sph!4v1505114924507" id="google-map" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
 </ion-content>
