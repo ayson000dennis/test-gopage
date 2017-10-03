@@ -1,13 +1,13 @@
 page-menu {
   .content-page-menu {
-    background-color: #424242;
+    background-color: #fff;
 
     .btn-nav.to-right {
-      -webkit-filter: brightness(100);
-      -moz-filter: brightness(100);
-      -ms-filter: brightness(100);
-      -o-filter: brightness(100);
-      filter: brightness(100);
+      -webkit-filter: brightness(.6);
+      -moz-filter: brightness(.6);
+      -ms-filter: brightness(.6);
+      -o-filter: brightness(.6);
+      filter: brightness(.6);
     }
 
     .menu-list {
@@ -16,16 +16,14 @@ page-menu {
       .item {
         padding: 5px 0;
         width: 100% !important;
-
         text-align: left !important;
-
         background-color: transparent;
 
         .item-inner .label span {
           font-family: 'Raleway Medium';
           font-size: 24px;
-          letter-spacing: .5px;
-          color: #fff;
+          letter-spacing: 0.5px;
+          color: #424242;
           text-transform: capitalize;
         }
       }
@@ -33,19 +31,16 @@ page-menu {
 
     .divider {
       width: 100%;
-
-
-      background-color: #fff;
+      background-color: #424242;
     }
 
     .logout {
       display: block;
       padding: 15px 0;
-
       font-family: 'Raleway Medium';
       font-size: 24px;
-      letter-spacing: .5px;
-      color: #fff;
+      letter-spacing: 0.5px;
+      color: #424242;
       text-decoration: none;
     }
   }

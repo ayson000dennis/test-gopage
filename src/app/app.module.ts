@@ -22,7 +22,11 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { UserMembershipCardPage } from '../pages/page-user-membership-card/page-user-membership-card';
 import { UserLoyaltyCardsPage } from '../pages/page-user-loyalty-cards/page-user-loyalty-cards';
 import { UserFindDealsPage } from '../pages/page-user-find-deals/page-user-find-deals';
+import { UserFilteredDealsPage } from '../pages/page-user-filtered-deals/page-user-filtered-deals';
+import { UserFindDealsMapPage } from '../pages/page-user-find-deals-map/page-user-find-deals-map';
 import { UserFavoritesPage } from '../pages/page-user-favorites/page-user-favorites';
+
+import { UserLoyaltyCardDealsPage } from '../pages/page-user-loyalty-card-deals/page-user-loyalty-card-deals';
 import { UserInboxPage } from '../pages/page-user-inbox/page-user-inbox';
 import { UserDealsPage } from '../pages/page-user-deals/page-user-deals';
 import { ListPage } from '../pages/list/list';
@@ -35,6 +39,13 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ApiService } from '../service/api.service.component';
 import { IonicStorageModule } from '@ionic/storage';
+
+import { UserChatPage } from '../pages/page-user-chat/page-user-chat';
+import {DatabaseService, SocketService, Sql, UtilService} from "../providers";
+import {ElasticTextarea} from "../components/elasticTextarea";
+import {ChatBubble} from "../components/chatBubble";
+import {KeyboardAttachDirective} from "../directives";
+import {Keyboard} from "@ionic-native/keyboard";
 @NgModule({
   declarations: [
     MyApp,
@@ -55,9 +66,16 @@ import { IonicStorageModule } from '@ionic/storage';
     UserLoyaltyCardsPage,
     UserFavoritesPage,
     UserFindDealsPage,
+    UserFilteredDealsPage,
+    UserFindDealsMapPage,
     UserInboxPage,
     ListPage,
-    UserDealsPage
+    UserDealsPage,
+    UserLoyaltyCardDealsPage,
+     ElasticTextarea,
+    ChatBubble,
+    KeyboardAttachDirective,
+    UserChatPage
   ],
   imports: [
     BrowserModule,
@@ -86,9 +104,15 @@ import { IonicStorageModule } from '@ionic/storage';
     UserLoyaltyCardsPage,
     UserFavoritesPage,
     UserFindDealsPage,
+    UserFilteredDealsPage,
+    UserFindDealsMapPage,
     UserInboxPage,
     ListPage,
-    UserDealsPage
+    UserDealsPage,
+    UserLoyaltyCardDealsPage,
+    ElasticTextarea,
+    ChatBubble,
+    UserChatPage
   ],
   providers: [
     StatusBar,
@@ -98,7 +122,11 @@ import { IonicStorageModule } from '@ionic/storage';
     Facebook,
     GooglePlus,
     BarcodeScanner,
-    ApiService
+    ApiService,
+    Sql,
+    DatabaseService,
+    SocketService,
+    UtilService
   ]
 })
 export class AppModule {}

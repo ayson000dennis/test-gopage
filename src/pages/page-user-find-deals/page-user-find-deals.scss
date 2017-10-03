@@ -358,13 +358,14 @@ page-user-find-deals {
                   background-color: #a4c73a;
 
                   &.disabled {
-                    color: #807f7f;
+                    font-size: 12px;
                     background-color: #e1e1e1;
+                    color: #807f7f;
                     opacity: 1;
                   }
                 }
 
-                &.btn-more {
+                &.btn-more {                  
                   background-color: #f79122;
                 }
               }

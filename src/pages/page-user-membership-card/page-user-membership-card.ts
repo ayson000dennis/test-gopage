@@ -8,11 +8,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Storage } from '@ionic/storage';
 import { ApiService } from '../../service/api.service.component';
 import * as $ from "jquery";
-
+import { UserInboxPage } from '../page-user-inbox/page-user-inbox';
 @Component({
   selector: 'page-user-membership-card',
   templateUrl: 'page-user-membership-card.html'
 })
+
 
 export class UserMembershipCardPage {
   pages: Array<{title: string, component: any}>;
@@ -36,7 +37,12 @@ export class UserMembershipCardPage {
       direction: 'back'
     });
   }
-
+  viewInbox() {
+    this.navCtrl.setRoot(UserInboxPage, {}, {
+      animate: true,
+      direction: 'back'
+    });
+  }
   showMenu() {
     this.navCtrl.push(MenuPage, {
       animate: true,

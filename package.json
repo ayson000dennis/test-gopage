@@ -51,7 +51,10 @@
     "rxjs": "5.4.0",
     "sha1": "^1.1.1",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.12"
+    "zone.js": "0.8.12",
+     "@ionic-native/keyboard": "^4.3.0",
+     "@types/socket.io-client": "^1.4.30",
+      "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.1.3",

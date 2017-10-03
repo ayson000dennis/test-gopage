@@ -13,6 +13,7 @@ page-sort-menu {
         padding: 5px;
         padding-left: 25px;
         font-family: "Raleway SemiBold";
+        font-size: 18px;
         color: #444;
       }
 
@@ -24,7 +25,8 @@ page-sort-menu {
         background: none;
         border-bottom: 1px solid #efefef !important;
 
-        .checkbox-ios .checkbox-checked {
+        .checkbox-ios .checkbox-checked,
+        .checkbox-md .checkbox-checked {
           border-color: #a4c73a;
           background-color: #a4c73a;
         }

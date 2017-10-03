@@ -1,6 +1,6 @@
 <!--
   Generated template for the PageUserLoyaltyCardDealsPage page.
-
+ 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -21,7 +21,7 @@
       </div>
       <div class="text-holder">
         <h3 class="deal-title-text">{{deal.title}}</h3>
-        <span class="card-stamp-text">5 stamps</span>
+        <span class="card-stamp-text">{{deal.stamp}} of {{deal.buy_pcs}}</span>
         <span class="card-expiration-text">Expires {{deal.end_date | date : 'MM/dd/yyyy'}}</span>
       </div>
     </div>

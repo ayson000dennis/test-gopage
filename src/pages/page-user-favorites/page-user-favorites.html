@@ -7,9 +7,19 @@
 </ion-header>
 
 <ion-content padding>
-  <p class="title">
-    <!-- <img class="btn-nav to-right" src="assets/icon/icon-close.png" alt="" (click)="goBack()"> -->
-    Favorites Page
-  </p>
+
+  <div class="favorites-holder">
+    <div class="favorites" *ngFor="let favorite of favorites;" tappable (click)="getBusiness(favorite.business_id[0])">
+      <div class="img-holder">
+        <img [src]="favorite.deals_id[0].photo.url" alt="">
+      </div>
+      <div class="text-holder">
+        <h3 class="title-text">{{favorite.deals_id[0].title}}</h3>
+        <div class="company-text">{{favorite.deals_id[0].business_name}}</div>
+        <div class="location-text">{{favorite.business_id[0].country}}</div>
+        <div class="expiration-text"><i class="fa fa-clock-o"></i> Expires {{favorite.deals_id[0].end_date | date : 'MM/dd/yyyy'}}</div>
+      </div>
+    </div>
+  </div>
 
 </ion-content>

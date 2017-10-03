@@ -22,7 +22,7 @@ import { ApiService } from '../../service/api.service.component';
 })
 export class UserLoyaltyCardDealsPage {
   deals: string[];
-  
+  business_id : any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -34,9 +34,9 @@ export class UserLoyaltyCardDealsPage {
   }
 
   ionViewWillEnter() {
+    this.business_id = this.navParams.get('business_id')
     this.storage.get('user').then(user => {
-
-      this.api.LoyaltyDeals.loyaltyDeal(user._id, user.account_type).then(deal => {
+      this.api.LoyaltyCards.loyalty_list(user._id,this.business_id).then(deal => {
         this.deals = deal;
         console.log(deal)
       });

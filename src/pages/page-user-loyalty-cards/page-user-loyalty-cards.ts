@@ -39,8 +39,9 @@ export class UserLoyaltyCardsPage {
 
   ionViewWillEnter() {
     this.storage.get('user').then(user => {
-      console.log(user)
-      this.api.LoyaltyCards.loyalty_list(user._id).then(loyalty => {
+      // console.log(user)
+      this.api.LoyaltyCards.business(user._id).then(loyalty => {
+        console.log(loyalty)
         this.loyalties = loyalty;
         this.hasData = true
         // console.log(loyalty[0].busines)
@@ -49,8 +50,9 @@ export class UserLoyaltyCardsPage {
     });
   }
 
-  showCardDeals() {
-    this.navCtrl.push(UserLoyaltyCardDealsPage, {
+  showCardDeals(business_id) {
+    console.log(business_id)
+    this.navCtrl.push(UserLoyaltyCardDealsPage,{business_id : business_id}, {
       animate: true,
       direction: 'forward'
     });
