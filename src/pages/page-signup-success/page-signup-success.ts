@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { SignupPage } from '../page-signup/page-signup';
+import { SignupEmailPage } from '../page-signup-email/page-signup-email';
 import { LoginPage } from '../page-login/page-login';
 
 @Component({
@@ -13,7 +13,7 @@ export class SignupSuccessPage {
   }
 
   goBack() {
-    this.navCtrl.setRoot(SignupPage, {}, {
+    this.navCtrl.setRoot(SignupEmailPage, {}, {
       animate: true,
       direction: 'back'
     });

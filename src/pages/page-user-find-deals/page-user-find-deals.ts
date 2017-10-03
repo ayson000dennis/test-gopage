@@ -3,9 +3,11 @@ import { Platform, NavController } from 'ionic-angular';
 
 import { LoginPage } from '../page-login/page-login';
 import { MenuPage } from '../page-menu/page-menu';
+import { CategoryMenuPage } from '../page-menu/page-category-menu/page-category-menu';
 import { ApiService } from '../../service/api.service.component';
-
+import { UserDealsPage } from '../page-user-deals/page-user-deals';
 import * as $ from "jquery";
+import { Storage } from '@ionic/storage'
 
 @Component({
   selector: 'page-user-find-deals',
@@ -19,14 +21,19 @@ export class UserFindDealsPage {
   constructor(
     public navCtrl: NavController,
     public platform: Platform,
-    private api : ApiService){
+    private api : ApiService,
+  private storage : Storage){
   }
   ionViewWillEnter(){
-    this.api.Deals.deals_list().then(deals =>{
-      this.deals = deals
-      this.hasData = true
-      console.log(this.deals)
+    this.storage.get("user").then(user => {
+      console.log(user);
+      this.api.Deals.deals_list().then(deals =>{
+        this.deals = deals
+        this.hasData = true
+        console.log(this.deals)
+      })
     })
+
   }
   goHome() {
     this.navCtrl.setRoot(LoginPage, {}, {
@@ -42,6 +49,21 @@ export class UserFindDealsPage {
     });
   }
 
+  showCategoryMenu() {
+    this.navCtrl.push(CategoryMenuPage, {
+      animate: true,
+      direction: 'forward'
+    });
+  }
+
   IonViewDidLoad() {
+
+  }
+  getBusiness(business){
+    console.log(business)
+    this.navCtrl.push(UserDealsPage, {business : business}, {
+         animate: true,
+         direction: 'forward'
+    });
   }
 }

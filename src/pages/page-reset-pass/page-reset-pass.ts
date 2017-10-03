@@ -36,25 +36,36 @@ export class ResetPassPage {
     var getUser = this.posts.email,
       baseUrl = Config.baseUrl;
 
+    if ($('.btn-green[type="submit"]').find('.fa-spinner').length == 0) {
+      $('.btn-green[type="submit"]').append('<span class="fa fa-spinner fa-spin"></span>');
+    }
+
     if (getUser) {
       this.http.post(baseUrl + 'api/users/sendemail',this.posts).subscribe(res => {
-        console.log(res);
-        this.navCtrl.setRoot(ResetPassSuccessPage, {}, {
-          animate: true,
-          direction: 'forward'
-        });
-      }, err => {
-        $('.form-reset label').each(function() {
-         var thisInput = $(this).find('input');
+      $('.btn-green[type="submit"]').find('.fa-spinner').remove();
 
-         thisInput.addClass('has-error').siblings('.text-validate').text('Invalid email address. Are you sure you are registered?');
+      this.navCtrl.setRoot(ResetPassSuccessPage, {}, {
+        animate: true,
+        direction: 'forward'
+      });
+      }, err => {
+        $('.btn-green[type="submit"]').find('.fa-spinner').remove();
+
+        $('.form-reset label').each(function() {
+        var thisInput = $(this).find('input'),
+          thisPlaceholder = thisInput.attr('placeholder');
+
+          thisInput.addClass('has-error').siblings('.text-validate').text('Invalid ' + thisPlaceholder + '. Are you sure you are registered?');
         });
       });
     } else {
-      $('.form-reset label').each(function() {
-       var thisInput = $(this).find('input');
+      $('.btn-green[type="submit"]').find('.fa-spinner').remove();
 
-       thisInput.addClass('has-error').siblings('.text-validate').text('Email address is required.');
+      $('.form-reset label').each(function() {
+        var thisInput = $(this).find('input'),
+          thisPlaceholder = thisInput.attr('placeholder');
+
+        thisInput.addClass('has-error').siblings('.text-validate').text(thisPlaceholder + ' is required.');
       });
     }
   }

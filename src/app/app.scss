@@ -16,9 +16,9 @@
 // automatically applied to the <body> element in the app.
 
 @font-face {
-  font-family: 'Raleway Semibold';
-  src: url('../assets/fonts/raleway-semibold.eot');
-  src: url('../assets/fonts/raleway-semibold.eot') format('embedded-opentype'), url('../assets/fonts/raleway-semibold.woff') format('woff'), url('../assets/fonts/raleway-semibold.ttf') format('truetype'), url('../assets/fonts/raleway-semibold.svg') format('svg');
+  font-family: 'Raleway Regular';
+  src: url('../assets/fonts/raleway-regular.eot');
+  src: url('../assets/fonts/raleway-regular.eot') format('embedded-opentype'), url('../assets/fonts/raleway-regular.woff') format('woff'), url('../assets/fonts/raleway-regular.ttf') format('truetype'), url('../assets/onts/raleway-regular.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,6 +27,14 @@
   font-family: 'Raleway Medium';
   src: url('../assets/fonts/raleway-medium.eot');
   src: url('../assets/fonts/raleway-medium.eot') format('embedded-opentype'), url('../assets/fonts/raleway-medium.woff') format('woff'), url('../assets/fonts/raleway-medium.ttf') format('truetype'), url('../assets/onts/raleway-medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway Semibold';
+  src: url('../assets/fonts/raleway-semibold.eot');
+  src: url('../assets/fonts/raleway-semibold.eot') format('embedded-opentype'), url('../assets/fonts/raleway-semibold.woff') format('woff'), url('../assets/fonts/raleway-semibold.ttf') format('truetype'), url('../assets/fonts/raleway-semibold.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +50,7 @@ body {
     ion-header + ion-content > .scroll-content {
       padding: 3vh 16px 0 !important;
 
-      background-color: #fff !important;
+      background-color: #ebebeb;
     }
 
     ion-navbar.toolbar {
@@ -204,10 +212,22 @@ body {
     text-align: center;
   }
 
+  .subtitle {
+    font-family: 'Raleway Regular';
+    font-size: 12px;
+    color: #8d8d8d;
+
+    a {
+      font-family: 'Raleway Semibold';
+      color: #f6901f;
+      text-decoration: none;
+    }
+  }
+
   .description {
     font-size: 20px;
     letter-spacing: 1.2px;
-    color: #9f9f9f;
+    color: #484747;
     text-align: center;
     text-decoration: none;
   }
@@ -218,7 +238,6 @@ body {
 
   .btn,
   .btn-green,
-  .btn-orange,
   .btn-green-out {
     -webkit-transition: .2s ease;
     -moz-transition: .2s ease;
@@ -237,10 +256,8 @@ body {
       box-shadow: inset 0 0 15px 5px rgba(0,0,0,.3);
     }
 
-    .fa-spin {
-      position: absolute !important;
-      left: initial !important;
-
+    .fa-spinner {
+      position: absolute;
       margin-left: 5px;
     }
   }
@@ -254,14 +271,6 @@ body {
     text-decoration: none;
 
     background-color: #a4c73a;
-    border-radius: 5px;
-  }
-
-  .btn-orange {
-    color: #fff;
-    text-decoration: none;
-
-    background-color: #f59022;
     border-radius: 5px;
   }
 
@@ -338,7 +347,7 @@ body {
 
     font-size: 22px;
     line-height: 1;
-    color: #9f9f9f;
+    color: #bbb;
     text-align: center;
 
     span {
@@ -359,7 +368,7 @@ body {
       height: 1px;
       width: 100%;
 
-      background-color: #9f9f9f;
+      background-color: #bbb;
     }
   }
 
@@ -376,7 +385,7 @@ body {
       & ~ input,
       & ~ label,
       & ~ button {
-        margin-top: 15px !important;
+        margin-top: 15px;
       }
 
       .btn-show {
@@ -456,7 +465,7 @@ body {
         font-family: "Raleway Medium";
       }
 
-      &[type="password"] {
+      &[type="password"]:not(.input-mobile) {
         padding: 17px 20px 15px;
 
         font-family: "Roboto";
@@ -581,7 +590,7 @@ body {
 
         font-size: 16px;
 
-        &[type="password"] {
+        &[type="password"]:not(.input-mobile) {
           padding: 14px 15px 11px;
 
           font-size: 20px;

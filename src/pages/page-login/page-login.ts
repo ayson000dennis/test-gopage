@@ -6,7 +6,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
 
 import { SignupPage } from '../page-signup/page-signup';
 import { ResetPassPage } from '../page-reset-pass/page-reset-pass';
-import { UserScannerPage } from '../page-user-scanner/page-user-scanner';
+import { UserMembershipCardPage } from '../page-user-membership-card/page-user-membership-card';
 import { ApiService } from '../../service/api.service.component';
 import { Storage } from '@ionic/storage';
 import * as $ from "jquery";
@@ -125,8 +125,7 @@ export class LoginPage {
   getUser(token){
    this.api.Users.user(token.user_id).then(user =>{
       this.storage.set('user', user);
-
-       this.navCtrl.setRoot(UserScannerPage, {}, {
+       this.navCtrl.setRoot(UserMembershipCardPage, {}, {
             animate: true,
             direction: 'forward'
           });

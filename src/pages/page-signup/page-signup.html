@@ -7,9 +7,9 @@
   </ion-navbar>
 </ion-header> -->
 <ion-content padding>
-  <ion-card *ngIf="userData">
+  <!-- <ion-card *ngIf="userData">
     <ion-card-header>{{ userData.email }}</ion-card-header>
-  </ion-card>
+  </ion-card> -->
 
   <p class="title">
     <img class="btn-nav" src="assets/icon/icon-back.png" alt="" (click)="goBack()">Sign Up
@@ -17,9 +17,12 @@
   <button class="btn login-fb" (click)="fbConnect()"><span class="fa fa-facebook"></span> Continue with Facebook</button>
   <button class="btn login-google" (click)="gpConnect()"><span class="fa fa-google"></span> Continue with Google</button>
   <div class="divider">
-    <span>Or sign up with email</span>
+    <span>or</span>
   </div>
-  <form class="form-signup">
+  <button class="btn btn-green" (click)="goSignupEmail()"><span class="fa fa-envelope-o"></span> Sign Up with Email</button>
+  <button class="btn btn-green" (click)="goSignupMobile()"><span class="fa fa-mobile"></span> Sign Up with Mobile number</button>
+
+  <!-- <form class="form-signup">
     <label>
       <input type="text" name="first_name" placeholder="First name" [(ngModel)]="posts.first_name" />
       <span class="text-validate">First name is required.</span>
@@ -27,10 +30,6 @@
     <label>
       <input type="text" name="last_name" placeholder="Last name" [(ngModel)]="posts.last_name" />
       <span class="text-validate">Last name is required.</span>
-    </label>
-    <label>
-      <input type="text" name="username" placeholder="Username" [(ngModel)]="posts.username" />
-      <span class="text-validate">Username is required.</span>
     </label>
     <label>
       <input type="email" name="email" placeholder="Email address" [(ngModel)]="posts.email" />
@@ -41,6 +40,8 @@
       <span class="btn-show">SHOW</span><span class="text-validate">Password is required.</span>
     </label>
     <input class="btn-green" type="submit" value="Sign Up" (click)="signMeUp()" />
-  </form>
-  <p class="description">By signing up, you agree to GoPage's <br><a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a></p>
+  </form> -->
+  <!-- <p class="description">By signing up, you agree to GoPage's <br><a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a></p> -->
+  <hr class="hr" />
+  <p class="description">Already have an account? <a href="#" (click)="goLogin()">Log In</a></p>
 </ion-content>

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { ApiService } from '../../service/api.service.component';
-import { Storage } from '@ionic/storage';
+import { Platform, NavController,NavParams } from 'ionic-angular';
 
-import { UserScannerPage } from '../page-user-scanner/page-user-scanner';
+import { LoginPage } from '../page-login/page-login';
+import { MenuPage } from '../page-menu/page-menu';
+import { ApiService } from '../../service/api.service.component';
+import { Storage } from '@ionic/storage'
 
 import * as $ from "jquery";
-import  moment  from 'moment';
 
 @Component({
   selector: 'page-user-deals',
@@ -14,48 +14,44 @@ import  moment  from 'moment';
 })
 
 export class UserDealsPage {
-  user: string[];
-  business_id: any;
-  hasData: boolean = false;
-  dealsList: any;
-
+  pages: Array<{title: string, component: any}>;
+  business : string[]
+  deals : string[]
+  hasData :boolean = false
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
-    private api:ApiService,
-    private storage: Storage){
-
-      this.business_id = navParams.get('business_id');
+    public platform: Platform,
+    public navParams : NavParams,
+    private api : ApiService,
+    private storage : Storage){
   }
 
-  goScanner() {
-    this.navCtrl.setRoot(UserScannerPage, {}, {
+  ionViewWillEnter(){
+    this.business = this.navParams.get('business');
+    console.log(this.business);
+
+    this.api.Deals.deals_list(this.business._id).then(deals =>{
+      this.deals = deals
+      this.hasData =true
+      console.log(this.deals)
+    })
+  }
+
+  goHome() {
+    this.navCtrl.setRoot(LoginPage, {}, {
       animate: true,
       direction: 'back'
     });
   }
 
-  ionViewWillEnter(){
-    this.api.Deals.deals_list(this.business_id).then(users => {
-      this.dealsList = users;
-      console.log(this.dealsList)
-      this.hasData = true;
-    })
+  showMenu() {
+    this.navCtrl.push(MenuPage, {
+      animate: true,
+      direction: 'forward'
+    });
   }
 
-  dateFormat(value) {
-    var dateNow = moment(value),
-      format = dateNow.format('MMM/D/YYYY'),
-      newDateNow = new Date(value),
-      getYear = newDateNow.getFullYear();
+  IonViewDidLoad() {
 
-    format = format.replace("amt", "at");
-    format = format.replace("pmt", "at");
-
-    if (getYear == 1970) {
-      return '-'
-    } else {
-      return format;
-    }
   }
 }
