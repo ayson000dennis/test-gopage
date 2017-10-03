@@ -30,11 +30,13 @@ export class UserDealsPage {
     this.business = this.navParams.get('business');
     console.log(this.business);
 
-    this.api.Deals.deals_list(this.business._id).then(deals =>{
+   // this.storage.get('user').then(user => {
+     this.api.Deals.deals_list().then(deals =>{
       this.deals = deals
       this.hasData =true
       console.log(this.deals)
     })
+   // })
   }
 
   goHome() {
