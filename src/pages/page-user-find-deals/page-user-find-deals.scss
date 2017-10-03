@@ -214,7 +214,7 @@ page-user-find-deals {
 
     .categories-main {
       .holder-categories-result1 {
-        padding: 0 0 30px;
+        padding: 0;
 
         .row ~ .row {
           margin-top: 15px;
@@ -375,13 +375,13 @@ page-user-find-deals {
     }
 
     .holder-pagination {
-      padding: 0 10px;
+      margin: 0 auto;
 
       .pagination {
-        justify-content: space-around;
+        padding-left: 0;
 
         & > * {
-          float: left;
+          display: inline;
           list-style: none;
         }
 
@@ -389,7 +389,7 @@ page-user-find-deals {
           .page-link {
             margin-right: 2px;
             margin-left: 2px;
-            padding: 0.5rem .8rem;
+            height: 35px;
 
             text-decoration: none;
             color: #a4c73a;

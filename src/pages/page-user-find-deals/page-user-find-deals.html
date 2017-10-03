@@ -25,7 +25,7 @@
         <a class="nav-link filter-categories" (click)="showCategoryMenu()"><i class="fa fa-filter"></i> Categories</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link filter-sort" href="javascript:void(0)"><i class="fa fa-sort"></i> Sort</a>
+        <a class="nav-link filter-sort" (click)="showSortMenu()"><i class="fa fa-sort"></i> Sort</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href=""><i class="fa fa-map-marker"></i> Map view</a>
@@ -86,23 +86,21 @@
     </div>
   </div>
 
-  <!-- <div class="row">
-    <div class="col-12">
-      <nav class="holder-pagination">
-        <ul class="pagination list-unstyled">
-          <li class="page-item prev-page">
-            <a class="page-link prev-page" href="#"><i class="fa fa-angle-left"></i> <span class="prev">Prev</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link active" href="#">4</a></li>
-          <li class="page-item">
-            <a class="page-link next-page" href="#"><span class="next">Next</span> <i class="fa fa-angle-right"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div> -->
+  <div class="row">
+    <nav class="col-12 holder-pagination">
+      <ul class="pagination list-unstyled">
+        <li class="page-item prev-page">
+          <button class="page-link prev-page" ion-button small><i class="fa fa-angle-left"></i>&nbsp;<span class="prev">Prev</span></button>
+        </li>
+        <li class="page-item"><button class="page-link" ion-button small>1</button></li>
+        <li class="page-item"><button class="page-link" ion-button small>2</button></li>
+        <li class="page-item"><button class="page-link" ion-button small>3</button></li>
+        <li class="page-item"><button class="page-link active" ion-button small>4</button></li>
+        <li class="page-item">
+          <button class="page-link next-page" ion-button small><span class="next">Next</span>&nbsp;<i class="fa fa-angle-right"></i></button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
 </ion-content>

@@ -22,6 +22,7 @@ export class UserLoyaltyCardsPage {
   pages: Array<{title: string, component: any}>;
   user : string[];
   loyalties : string[];
+  hasData:boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -38,9 +39,11 @@ export class UserLoyaltyCardsPage {
 
   ionViewWillEnter() {
     this.storage.get('user').then(user => {
-      this.api.LoyaltyCards.loyaltyCard(user._id).then(loyalty => {
-        this.loyalties = loyalty[0].business_id;
-        //console.log(loyalty)
+      console.log(user)
+      this.api.LoyaltyCards.loyalty_list(user._id).then(loyalty => {
+        this.loyalties = loyalty;
+        this.hasData = true
+        // console.log(loyalty[0].busines)
       });
 
     });

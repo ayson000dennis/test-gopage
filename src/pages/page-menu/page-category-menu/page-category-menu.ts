@@ -15,14 +15,6 @@ export class CategoryMenuPage {
 
   constructor(
     public navCtrl: NavController) {
-
-    // this.pages = [
-    //   { title: 'membership card', component: UserMembershipCardPage },
-    //   { title: 'loyalty cards', component: UserLoyaltyCardsPage },
-    //   { title: 'find deals', component: UserFindDealsPage },
-    //   { title: 'favorites', component: UserFavoritesPage },
-    //   { title: 'inbox', component: UserInboxPage }
-    // ];
   }
 
   goBack() {
@@ -31,12 +23,4 @@ export class CategoryMenuPage {
       direction: 'back'
     });
   }
-
-  openPage(page) {
-    this.navCtrl.setRoot(page.component, {}, {
-      animate: true,
-      direction: 'back'
-    });
-  }
-
 }

@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   LoyaltyCards = {
-    loyaltyCard: (customerId) => {
+    loyalty_list: (customerId) => {
       return this.http.get(Config.baseUrl + "api/loyalties/list/" + customerId).map(response => {
         return response.json();
       }).toPromise();

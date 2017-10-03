@@ -13,15 +13,15 @@
     </p>
   </div>
 
-  <div class="business-cards-holder">
-    <div class="business-cards" *ngFor="let loyalty of loyalties; let i = index;" tappable (click)="showCardDeals()"> <!-- *ngFor -->
+  <div class="business-cards-holder" *ngIf="hasData">
+    <div class="business-cards" *ngFor="let loyalty of loyalties; let i = index;" tappable (click)="showCardDeals()"> 
       <div class="img-holder">
-        <img [src]="loyalty.files[0].url" alt="">
+        <img [src]="loyalty.deals_id[0].photo.url" alt="">
       </div>
       <div class="text-holder">
-        <h3 class="card-title-text">{{loyalty.company_name}}</h3>
-        <span class="card-location-text">{{loyalty.country}}</span>
-        <span class="card-count-text">10 loyalty cards</span>
+        <h3 class="card-title-text">{{loyalty.business_id[0].company_name}}</h3>
+        <span class="card-location-text">{{loyalty.business_id[0].country}}</span>
+        <span class="card-count-text">{{loyalty.loyalty_details.stamp}} stamp</span>
       </div>
     </div>
   </div>

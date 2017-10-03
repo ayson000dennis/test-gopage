@@ -17,6 +17,7 @@ import { SignupSuccessPage } from '../pages/page-signup-success/page-signup-succ
 import { SignupMobileSuccessPage } from '../pages/page-signup-mobile-success/page-signup-mobile-success';
 import { MenuPage } from '../pages/page-menu/page-menu';
 import { CategoryMenuPage } from '../pages/page-menu/page-category-menu/page-category-menu';
+import { SortMenuPage } from '../pages/page-menu/page-sort-menu/page-sort-menu';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { UserMembershipCardPage } from '../pages/page-user-membership-card/page-user-membership-card';
 import { UserLoyaltyCardsPage } from '../pages/page-user-loyalty-cards/page-user-loyalty-cards';
@@ -48,6 +49,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SignupMobileSuccessPage,
     MenuPage,
     CategoryMenuPage,
+    SortMenuPage,
     ItemDetailsPage,
     UserMembershipCardPage,
     UserLoyaltyCardsPage,
@@ -78,6 +80,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SignupMobileSuccessPage,
     MenuPage,
     CategoryMenuPage,
+    SortMenuPage,
     ItemDetailsPage,
     UserMembershipCardPage,
     UserLoyaltyCardsPage,

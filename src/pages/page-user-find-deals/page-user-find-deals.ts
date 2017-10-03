@@ -4,6 +4,7 @@ import { Platform, NavController } from 'ionic-angular';
 import { LoginPage } from '../page-login/page-login';
 import { MenuPage } from '../page-menu/page-menu';
 import { CategoryMenuPage } from '../page-menu/page-category-menu/page-category-menu';
+import { SortMenuPage } from '../page-menu/page-sort-menu/page-sort-menu';
 import { ApiService } from '../../service/api.service.component';
 import { UserDealsPage } from '../page-user-deals/page-user-deals';
 import * as $ from "jquery";
@@ -51,6 +52,13 @@ export class UserFindDealsPage {
 
   showCategoryMenu() {
     this.navCtrl.push(CategoryMenuPage, {
+      animate: true,
+      direction: 'forward'
+    });
+  }
+
+  showSortMenu() {
+    this.navCtrl.push(SortMenuPage, {
       animate: true,
       direction: 'forward'
     });

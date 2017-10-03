@@ -25791,40 +25791,19 @@ page-category-menu .content-category-menu {
   background-color: #fff;
 }
 
-page-category-menu .content-category-menu .btn-nav.to-right {
-  -webkit-filter: brightness(100);
-  -moz-filter: brightness(100);
-  -ms-filter: brightness(100);
-  -o-filter: brightness(100);
-  filter: brightness(100);
-}
-
 page-category-menu .content-category-menu .menu-list {
   margin-top: 15px;
 }
 
 page-category-menu .content-category-menu .menu-list .categories-list {
+  padding-left: 0;
+  margin: 0 -15px;
   list-style: none;
 }
 
-page-category-menu .content-category-menu .menu-list .categories-list li ~ li {
-  margin-top: 0;
-}
-
-page-category-menu .content-category-menu .menu-list .categories-list li a {
-  padding: 0 10px;
-}
-
-page-category-menu .content-category-menu .menu-list .categories-list li img {
-  display: inline;
-}
-
-page-category-menu .content-category-menu .menu-list .categories-list {
-  padding-top: 27px;
-  margin-bottom: 0;
-}
-
 page-category-menu .content-category-menu .menu-list .categories-list li {
+  padding: 5px 25px;
+  border-bottom: 1px solid #efefef;
   opacity: 0.7;
 }
 
@@ -25845,14 +25824,15 @@ page-category-menu .content-category-menu .menu-list .categories-list li a {
   font-size: 14px;
   line-height: 3;
   color: #444;
+  text-decoration: none;
 }
 
-page-category-menu .content-category-menu .menu-list .categories-list li img:hover {
+page-category-menu .content-category-menu .menu-list .categories-list li:hover img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
-page-category-menu .content-category-menu .menu-list .categories-list li a:hover {
+page-category-menu .content-category-menu .menu-list .categories-list li:hover a {
   color: #a4c73a;
   text-decoration: none;
 }
@@ -25870,9 +25850,64 @@ page-category-menu .content-category-menu .menu-list .categories-list li.active 
   color: #a4c73a;
 }
 
-page-category-menu .content-category-menu .divider {
-  width: 100%;
+page-sort-menu .content-sort-menu {
   background-color: #fff;
+}
+
+page-sort-menu .content-sort-menu .scroll-content {
+  overflow: hidden;
+}
+
+page-sort-menu .content-sort-menu .list {
+  margin: -15px;
+}
+
+page-sort-menu .content-sort-menu .list h5 {
+  padding: 5px;
+  padding-left: 25px;
+  font-family: "Raleway SemiBold";
+  color: #444;
+}
+
+page-sort-menu .content-sort-menu .list .item {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-left: 25px;
+  width: 100% !important;
+  background: none;
+  border-bottom: 1px solid #efefef !important;
+}
+
+page-sort-menu .content-sort-menu .list .item .checkbox-ios .checkbox-checked {
+  border-color: #a4c73a;
+  background-color: #a4c73a;
+}
+
+page-sort-menu .content-sort-menu .list .sortby-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px 20px;
+}
+
+page-sort-menu .content-sort-menu .list .sortby-button .btn {
+  margin: 15px 2px;
+  width: 48%;
+}
+
+page-sort-menu .content-sort-menu .list .sortby-button .btn.done-btn {
+  background: #a4c73a;
+}
+
+page-sort-menu .content-sort-menu .list .sortby-button .btn:hover {
+  opacity: 0.8;
 }
 
 page-reset-pass form {
@@ -26510,7 +26545,7 @@ page-user-find-deals .content .categories-header .holder-toggle .btn-toggle {
 }
 
 page-user-find-deals .content .categories-main .holder-categories-result1 {
-  padding: 0 0 30px;
+  padding: 0;
 }
 
 page-user-find-deals .content .categories-main .holder-categories-result1 .row ~ .row {
@@ -26670,24 +26705,22 @@ page-user-find-deals .content .categories-main .holder-categories-result1 .categ
 }
 
 page-user-find-deals .content .holder-pagination {
-  padding: 0 10px;
+  margin: 0 auto;
 }
 
 page-user-find-deals .content .holder-pagination .pagination {
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  padding-left: 0;
 }
 
 page-user-find-deals .content .holder-pagination .pagination > * {
-  float: left;
+  display: inline;
   list-style: none;
 }
 
 page-user-find-deals .content .holder-pagination .pagination .page-item .page-link {
   margin-right: 2px;
   margin-left: 2px;
-  padding: 0.5rem .8rem;
+  height: 35px;
   text-decoration: none;
   color: #a4c73a;
   background-color: #fff;
